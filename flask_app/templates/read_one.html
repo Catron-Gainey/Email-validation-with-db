@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read One</title>
+</head>
+<body>
+    <Div style="display: flex; justify-content: space-between;">
+        <h1>User {{user.id}}</h1> <a href="/read/all">Home</a>
+    </Div>
+    <p>First Name: {{user.first_name}}</p>
+    <p>Last Name: {{user.last_name}}</p>
+    <p>email: {{user.email}}</p>
+    <p>created at: {{user.created_at}}</p>
+    <p>Last updated on: {{user.updated_at}}</p>
+
+<a href="/edit/{{user.id}}">Edit |</a> <a href="/delete/{{user.id}}">Delete</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users CR</title>
+</head>
+<body>
+    <Div style="display: flex; justify-content: space-between;">
+        <h1>Edit User {{user.id}}</h1> <a href="/read/all">Home</a>
+    </Div>
+    <Div style="margin: 0 auto; width: 500px;" >
+        <Form action='/update/{{user.id}}' method='post'>
+            <label>
+                First Name:
+                <input style="display: block;" type="text" name="first_name" value="{{user.first_name}}">
+            </label>
+            <label>
+                Last Name:
+                <input style="display: block;" type="text" name="last_name" value="{{user.last_name}}">
+            </label>
+            <label>
+                Email:
+                <input style="display: block;" type="text" name="email" value="{{user.email}}">
+            </label>
+            <input type='submit' value='Update' style="display: block;">
+        </Form>
+        <a href="/read/one/{{user.id}}">Show User</a>
+    </Div>
+</body>
+</html>
