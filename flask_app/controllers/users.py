@@ -10,26 +10,13 @@ def main_page():
 @app.route('/create', methods=['POST'])
 def create_user():
     # if there are errors:
-    # We call the staticmethod on Burger model to validate
+    # We call the staticmethod on the model to validate
     if not Users.validate_user(request.form):
-        # redirect to the route where the burger form is rendered.
+        # redirect to the route where it is rendered.
         return redirect('/')
     # else no errors:
     user_id= Users.save(request.form)
     return redirect(f'/read/one/{user_id}')
-
-# @app.route('/', methods=['POST'])
-# def register():
-#     if not Users.validate_user(request.form):
-#         # we redirect to the template with the form.
-#         return redirect('/')
-#     # ... do other things
-#     return redirect('/dashboard')
-
-# @app.route('/create', methods=['POST'])
-# def create():
-#     user_id= Users.save(request.form)
-#     return redirect(f'/read/one/{user_id}')
 
 @app.route('/read/all')
 def read_all():
